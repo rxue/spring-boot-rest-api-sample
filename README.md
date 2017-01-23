@@ -1,7 +1,7 @@
 Google REST API key: `AIzaSyCxAntH7_bOzk5hZrxS06cAdaHqVSFud-4`
 
 # Assumption of Business Logic
-All restaurants are small-sized indivuduals without any chains, i.e. restaurant names are unique
+Each restaurant has its unique pizzas, i.e.  `Restaurant` to `Pizza` is a bidirectional `OneToMany` relationship 
 
 # Environment Requirement
 * Internet
