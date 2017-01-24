@@ -10,13 +10,13 @@ Each restaurant has its unique pizzas, i.e. `Restaurant` to `Pizza` is a bidirec
 * Compile with command: `mvn clean package -Dspring.profiles.active=derby`
 * Run With command: `java -Dspring.profiles.active=derby -jar target/restaurant-0.0.1-SNAPSHOT.jar`
 
-# REST API Description
-## Technology used
+# Technology used
 * Spring Boot with Java 8
 * Hibernate JPA, JPQL
 * Spring Security
 * Derby embedded in-memory database with its SQL Dialect for inserting initial data (just for testing purpose)
 
+# REST API Description
 POST, PUT, DELTE request is secured with username `admin` and password `admin` and CSRF disabled just for testing purpose
 * List all restaurants: `GET http://localhost:8080/rest/restaurants`
 * Add a new restaurant: `POST http://localhost:8080/rest/restaurant`
