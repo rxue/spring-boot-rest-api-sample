@@ -1,0 +1,25 @@
+--DROP TABLE restaurant;
+--DROP TABLE pizza_menu;
+CREATE TABLE RESTAURANT (
+	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), 
+	name VARCHAR(50) NOT NULL, 
+	city VARCHAR(20),
+	address VARCHAR(30),
+	email VARCHAR(20), 
+	phone VARCHAR(20), 
+	open_at TIME,
+	close_at TIME,
+	PRIMARY KEY (id) 
+);
+CREATE TABLE pizza (
+	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), 
+	restaurant_id INTEGER,
+	name VARCHAR(30),
+	size CHAR,
+	key_ingredients VARCHAR(30),
+	price FLOAT,
+	PRIMARY KEY (id),
+	CONSTRAINT fk_restaurant FOREIGN KEY (restaurant_id) REFERENCES restaurant (id)
+	ON DELETE CASCADE
+	ON UPDATE RESTRICT
+); 

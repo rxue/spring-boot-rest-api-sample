@@ -1,0 +1,1 @@
+INSERT INTO restaurants.restaurant VALUES(NULL, 'Kotipizza', 'Tampere', 'Kullervonkatu 9', 'pizza@kotipizza.fi', '0207 716 328', '11:00:00', '22:00:00');

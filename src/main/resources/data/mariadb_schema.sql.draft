@@ -1,0 +1,30 @@
+-- As a MariaDB, the default engine is XtraDB
+CREATE DATABASE restaurants;
+USE restaurants;
+CREATE TABLE restaurant (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+	name VARCHAR(50) NOT NULL, 
+	city VARCHAR(20),
+	address VARCHAR(30),
+	email VARCHAR(20), 
+	phone VARCHAR(20), 
+	open_at TIME,
+	close_at TIME
+);
+CREATE TABLE pizza_menu (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	restaurant_id int,
+	name VARCHAR(30),
+	size CHAR,
+	key_ingredients VARCHAR(30),
+	price DECIMAL(4,2),
+	CONSTRAINT fk_restaurant FOREIGN KEY (restaurant_id) REFERENCES restaurant (id)
+	ON DELETE CASCADE
+	ON UPDATE RESTRICT
+);
+CREATE USER end_user IDENTIFIED BY 'end_user';
+GRANT SELECT,INSERT,DELETE,UPDATE ON restaurants.* TO end_user;
+FLUSH PRIVILEGES;
+-- Insert some sample data for testing purpose
+--INSERT INTO restaurant VALUES(NULL, 'Kotipizza', 'Tampere', 'Kullervonkatu 9', 'pizza@kotipizza.fi', '0207 716 328', '11:00:00', '22:00:00');
+ 
